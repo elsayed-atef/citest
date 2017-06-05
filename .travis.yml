@@ -7,8 +7,7 @@ env:
 
 install:
   # Install Ansible.
-  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible; else pip install ansible==$ANSIBLE_VERSION; fi
-  - if [ "$ANSIBLE_VERSION" = "latest" ]; then pip install ansible-lint; fi
+  -  pip install ansible==$ANSIBLE_VERSION
 
 script:
   - ansible-playbook you360/you360_playbook.yml -i you360/hosts --ask-sudo-pass -vvvv --flush-cache
