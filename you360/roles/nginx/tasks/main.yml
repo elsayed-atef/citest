@@ -1,0 +1,26 @@
+- name: install nginx
+  become: yes
+  apt: >
+    name=nginx
+    update_cache=true
+    state=latest
+
+#- name: Copy mongodb conf for service start
+#  become: yes
+#  template: src=mongodb.service
+#            dest=/etc/systemd/system/
+#  notify: reload nginx
+
+
+
+
+[Unit]
+Description=High-performance, schema-free document-oriented database
+After=network.target
+
+[Service]
+User=mongodb
+ExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf
+
+[Install]
+WantedBy=multi-user.target
