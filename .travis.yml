@@ -25,9 +25,9 @@ deploy:
     repo: sayed24/citest
     tags: false
 after_success:
-      script:
+
       - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-      - docker build -t Dockerfile .
+      - docker build -f Dockerfile -t testimg .
       - docker images
       - docker tag testimg $DOCKER_USERNAME/testimg
       - docker push $DOCKER_USERNAME/testimg
