@@ -32,6 +32,6 @@ deploy:
 
   on:
     repo: sayed24/citest
-    tags: true
+    tags: false
     ####################
 #################
