@@ -21,3 +21,15 @@ deploy:
   on:
     repo: sayed24/citest
     tags: false
+jobs:
+  include:
+    - stage: build docker image
+      script:
+      - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
+      - docker build -t Dockerfile .
+      - docker images
+      - docker tag testimg $DOCKER_USERNAME/testimg
+      - docker push $DOCKER_USERNAME/testimg
+    - stage: test
+      script: docker run --rm $DOCKER_USERNAME/testimg cat hello.txt
+    - script: docker run --rm $DOCKER_USERNAME/testimg cat hello.txt
