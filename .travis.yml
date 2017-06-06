@@ -16,7 +16,7 @@ env:
 #   - git push origin $GIT_TAG
 script:
   # do some more stuff here
-  - ./changefile.sh
+  - ./chagefile.sh
 before_deploy:
   - ./deploy.sh
 deploy:
