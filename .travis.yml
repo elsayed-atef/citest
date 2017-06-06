@@ -27,7 +27,7 @@ deploy:
 after_success:
 
       - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
-      - docker build -f Dockerfile -t testimg .
+      - docker build -f Dockerfile -t $DOCKER_USERNAME/testimg .
       - docker images
-      - docker tag testimg $DOCKER_USERNAME/testimg
+      # - docker tag testimg $DOCKER_USERNAME/testimg
       - docker push $DOCKER_USERNAME/testimg
