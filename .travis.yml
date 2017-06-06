@@ -4,6 +4,9 @@ node_js:
 sudo: required
 services:
   - docker
+before_install:
+  - sudo apt-get update
+  - sudo apt-get -y -o Dpkg::Options::="--force-confnew" install docker-engine
 env:
   matrix:
   - NODE_ENV=test
@@ -29,6 +32,3 @@ after_success:
       - docker images
       - docker tag testimg $DOCKER_USERNAME/testimg
       - docker push $DOCKER_USERNAME/testimg
-    - stage: test
-      script: docker run --rm $DOCKER_USERNAME/testimg cat hello.txt
-    - script: docker run --rm $DOCKER_USERNAME/testimg cat hello.txt
