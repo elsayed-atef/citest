@@ -1,4 +1,5 @@
 #!/bin/bash
+echo "deploying"
 YEAR=$(date +"%Y")
 MONTH=$(date +"%m")
 git config --global user.email "${GIT_EMAIL}"
@@ -13,3 +14,4 @@ git tag $GIT_TAG -a -m "Tag Generated from TravisCI for build $TRAVIS_BUILD_NUMB
 git push origin master && git push origin master --tags
 ls -aR
 else echo Tag already exists!; fi
+####
