@@ -21,8 +21,7 @@ deploy:
   on:
     repo: sayed24/citest
     tags: false
-jobs:
-  include:
+after_success:
     - stage: build docker image
       script:
       - docker login -u="$DOCKER_USERNAME" -p="$DOCKER_PASSWORD"
