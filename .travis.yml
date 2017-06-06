@@ -15,6 +15,7 @@ deploy:
   file_glob: true
   file:
     - app/controllers/*
-    
+
   on:
+    tags: true
     repo: sayed24/citest
