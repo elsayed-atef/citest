@@ -7,7 +7,7 @@ env:
 # - ansible-playbook you360/you360_playbook.yml -i you360/hosts --ask-sudo-pass -vvvv
 #   --flush-cache
 before_deploy:
-  - export RELEASE_PKG_FILE=$(ls -R *.tar)
+  - export RELEASE_PKG_FILE=$(ls -R )
   - echo "deploying $RELEASE_PKG_FILE to GitHub releases"
 deploy:
   skip_cleanup: true
