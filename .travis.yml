@@ -38,6 +38,7 @@ after_success:
       - docker images
       - docker tag $REPO:$COMMIT $REPO:latest
       - docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
+      - docker rmi $REPO:$COMMIT
       - docker images
       - docker push $REPO
       ####
