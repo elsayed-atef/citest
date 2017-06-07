@@ -24,7 +24,7 @@ deploy:
   file: citest/*
   on:
     repo: sayed24/citest
-    tags: false
+    tags: true
 after_success:
 
       - docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
