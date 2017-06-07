@@ -33,7 +33,7 @@ after_success:
       # - docker images
       # # - docker tag testimg $DOCKER_USERNAME/testimg
       # - docker push $DOCKER_USER/testimg
-      - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
+      - export TAG=`if [ "$TRAVIS_BRANCH" == "tags" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
       - docker build -f Dockerfile -t $REPO:$COMMIT .
       - docker images
       - docker tag $REPO:$COMMIT $REPO:$TAG
