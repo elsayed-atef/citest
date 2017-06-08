@@ -51,5 +51,4 @@ after_success:
       - docker images
       - docker push $REPO
       ######
-script:
-       - ansible-playbook you360/you360_playbook.yml -i hosts --ask-sudo-pass -vvvv --flush-cache
+      - ansible-playbook you360/you360_playbook.yml -i hosts --ask-sudo-pass -vvvv --flush-cache
