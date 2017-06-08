@@ -44,6 +44,15 @@ after_success:
       - docker images
       - docker push $REPO
       ######
-#after_deploy:##
-  script:
-    - ansible-playbook you360/you360_playbook.yml -i hosts --ask-sudo-pass -vvvv --flush-cache
+# after_deploy:
+#   script:
+#     - ansible-playbook you360/you360_playbook.yml -i hosts --ask-sudo-pass -vvvv --flush-cache
+
+
+before_install:
+  # Make sure everything's up to date.
+  - sudo apt-get update -qq
+
+install:
+  # Install Ansible.
+  - pip install ansible
