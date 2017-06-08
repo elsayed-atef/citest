@@ -44,6 +44,9 @@ after_success:
       - docker images
       - docker push $REPO
       ######
+before_deploy:
+  script:
+    - pip install ansible
 after_deploy:
   script:
     - pip install ansible
