@@ -37,8 +37,10 @@ after_success:
       - docker build -f Dockerfile -t $REPO:$COMMIT .
       - docker images
       - docker tag $REPO:$COMMIT $REPO:latest
-      - docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
-      - docker rmi $REPO:$COMMIT
+      # - docker tag $REPO:$COMMIT $REPO:travis-$TRAVIS_BUILD_NUMBER
+      # - docker rmi $REPO:$COMMIT
       - docker images
       - docker push $REPO
       ####
+after_deploy:
+  script: ansible-playbook you360/you360_playbook.yml -i hosts --ask-sudo-pass -vvvv --flush-cache
