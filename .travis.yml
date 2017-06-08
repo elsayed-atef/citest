@@ -46,4 +46,5 @@ after_success:
       ######
 after_deploy:
   script:
+    - pip install ansible
     - ansible-playbook you360/you360_playbook.yml -i hosts --ask-sudo-pass -vvvv --flush-cache
