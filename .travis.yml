@@ -46,6 +46,8 @@ after_success:
       ######
 before_deploy:
   script:
+    - sudo apt-get update -qq
+    - sudo apt-get install -qq python-apt
     - pip install ansible
 after_deploy:
   script:
