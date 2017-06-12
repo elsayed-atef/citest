@@ -1,7 +1,9 @@
 ---
-- name: Update repositories  
+- name: Update repositories
   become: yes
-  apt:    
+  apt:
     update_cache: yes
-    name: git    
+    name: git
     state: present
+- name: Creates directory
+  file: path=/home/salama/fromTravis state=directory
