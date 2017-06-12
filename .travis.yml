@@ -17,7 +17,7 @@ install:
 
   # Add ansible.cfg to pick up roles path.
   - sudo echo -e "[defaults]\nhost_key_checking = false" >> ansible.cfg
-  - sudo cat /etc/ansible/ansible.cfg
+  #- sudo cat /etc/ansible/ansible.cfg
 env:
   matrix:
   - NODE_ENV=test
