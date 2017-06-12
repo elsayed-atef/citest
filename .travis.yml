@@ -16,7 +16,8 @@ install:
   - pip install ansible
 
   # Add ansible.cfg to pick up roles path.
-  - "{ echo '[defaults]'; echo 'roles_path = ../'; } >> ansible.cfg"
+  - "{ sudo echo -e '[defaults]\nhost_key_checking = false'; echo 'roles_path = ../'; } >> /etc/ansible/ansible.cfg"
+  - sudo cat /etc/ansible/ansible.cfg
 env:
   matrix:
   - NODE_ENV=test
