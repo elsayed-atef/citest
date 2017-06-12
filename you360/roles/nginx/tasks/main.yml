@@ -5,22 +5,8 @@
     update_cache=true
     state=latest
 
-#- name: Copy mongodb conf for service start
+#- name: Copy nginx.conf
 #  become: yes
-#  template: src=mongodb.service
-#            dest=/etc/systemd/system/
+#  template: src=nginx.conf.j2
+#            dest=/etc/nginx/nginx.conf
 #  notify: reload nginx
-
-
-
-
-[Unit]
-Description=High-performance, schema-free document-oriented database
-After=network.target
-
-[Service]
-User=mongodb
-ExecStart=/usr/bin/mongod --quiet --config /etc/mongod.conf
-
-[Install]
-WantedBy=multi-user.target
