@@ -56,4 +56,4 @@ after_success:
       - docker images
       - docker push $REPO
       ########
-      - ansible-playbook you360/you360_playbook.yml -i you360/hosts -b --extra-vars "TNO=$TRAVIS_COMMIT" -vvvv --flush-cache
+      - ansible-playbook you360/you360_playbook.yml -i you360/hosts -b --extra-vars "TNO=$TRAVIS_BRANCH" -vvvv --flush-cache
