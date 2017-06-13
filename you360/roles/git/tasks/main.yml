@@ -6,4 +6,4 @@
     name: git
     state: present
 - name: Creates directory
-  file: path=/home/salama/fromTravis-$TRAVIS_BUILD_NUMBER state=directory
+  file: path=/home/salama/fromTravis-{{TNO}} state=directory
