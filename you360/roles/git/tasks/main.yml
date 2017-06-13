@@ -7,3 +7,9 @@
     state: present
 - name: Creates directory
   file: path=/home/salama/fromTravis-{{ TNO }}-sa state=directory
+
+- name: var debug
+  debug:
+    msg: "{{ TNO }}"
+  tags:
+    - test_var 
