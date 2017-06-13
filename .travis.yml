@@ -42,7 +42,7 @@ after_success:
 
       - docker login -u="$DOCKER_USER" -p="$DOCKER_PASS"
       - export REPO=$DOCKER_USER/you360
-      - export TNO=${TRAVIS_COMMIT}
+      - export TNO=$TRAVIS_COMMIT
       # - docker build -f Dockerfile -t $DOCKER_USER/testimg:latest .
       # - docker images
       # # - docker tag testimg $DOCKER_USERNAME/testimg
