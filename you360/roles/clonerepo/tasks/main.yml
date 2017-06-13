@@ -15,3 +15,11 @@
      version: "{{ TNO }}"
   tags:
      - test_clone
+
+- name: Install packages based on package.json.
+  npm:
+    path: /home/salama/{{ TNO }}/
+    global: yes
+
+  tags:
+    - test_npm
