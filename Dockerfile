@@ -1,1 +1,1 @@
-From ubuntu:latest
+From generatorangularfullstack/angular-fullstack-dist:latest
