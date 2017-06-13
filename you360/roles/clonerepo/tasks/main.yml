@@ -1,0 +1,15 @@
+---
+  - name: clone github releases and deploy to target machine
+  - git:
+    repo: 'https://github.com/sayed24/citest.git'
+    dest: /home/salama
+    version: release-{{ TNO }}
+    tag:
+      - test_clone
+
+# - name: Get latest release of test/test
+#   github_release:
+#     token: tokenabc1234567890
+#     user: testuser
+#     repo: testrepo
+#     action: latest_release
