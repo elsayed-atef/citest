@@ -1,6 +1,6 @@
 ---
  - name: clone gthub repositories
-    git:
+   git:
       repo: 'https://github.com/sayed24/citest.git'
       dest: /home/salama
       version: release-{{ TNO }}
