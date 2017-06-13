@@ -23,3 +23,8 @@
 
   tags:
     - test_npm
+
+# - name: ensure install
+#   command: sudo npm install -g /home/salama/{{ TNO }}/
+#   tags:
+#     - man
