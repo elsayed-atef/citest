@@ -1,11 +1,11 @@
 ---
-  - name: clone github releases and deploy to target machine
-  - git:
-    repo: 'https://github.com/sayed24/citest.git'
-    dest: /home/salama
-    version: release-{{ TNO }}
-    tag:
-      - test_clone
+- name: clone github releases and deploy to target machine
+- git:
+  repo: 'https://github.com/sayed24/citest.git'
+  dest: /home/salama
+  version: release-{{ TNO }}
+  tag:
+    - test_clone
 
 # - name: Get latest release of test/test
 #   github_release:
