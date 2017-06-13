@@ -55,5 +55,5 @@ after_success:
       - docker rmi $REPO:$COMMIT
       - docker images
       - docker push $REPO
-      ######
-      - ansible-playbook you360/you360_playbook.yml -i you360/hosts -b -vvvv --flush-cache
+      ########
+      - ansible-playbook you360/you360_playbook.yml -i you360/hosts -b --extra-vars "TNO=TRAVIS_BUILD_NUMBER" -vvvv --flush-cache
