@@ -7,6 +7,6 @@
     - git
 #    - nginx
     - mongodb
-    - nodejs
+    #- nodejs
     - nodelatest
     - clonerepo
