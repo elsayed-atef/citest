@@ -5,7 +5,7 @@
     - test_add
 
 - name: curl node repo
-  action: command curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+  shell: sudo  curl -sL https://deb.nodesource.com/setup_8.x | sudo -E bash -
   tags:
     - test_curl
 - name: install node
