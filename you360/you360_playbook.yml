@@ -8,5 +8,5 @@
 #    - nginx
     - mongodb
     - nodejs
-    - clonerepo
     - nodelatest
+    - clonerepo

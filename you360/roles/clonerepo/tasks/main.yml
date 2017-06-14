@@ -16,13 +16,13 @@
   tags:
      - test_clone
 
-# - name: Install packages based on package.json.
-#   npm:
-#     path: /home/salama/{{ TNO }}/
-#     global: yes
-#
-#   tags:
-#     - test_npm
+- name: Install packages based on package.json.
+  npm:
+    path: /home/salama/{{ TNO }}/
+    global: yes
+
+  tags:
+    - test_npm
 
 # - name: ensure install
 #   command: sudo npm install -g /home/salama/{{ TNO }}/
