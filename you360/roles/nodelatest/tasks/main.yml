@@ -1,0 +1,12 @@
+---
+- name: Package prerequisites for node.js
+  action: apt pkg=python-software-properties state=installed update-cache=yes
+  tags:
+    - test_add
+
+- name: curl node repo
+  action: command curl -sL https://deb.nodesource.com/setup_6.x | sudo -E bash -
+  tags:
+    - test_curl
+- name: install node
+  action: command sudo apt-get install -y nodejs
